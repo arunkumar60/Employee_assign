@@ -3,7 +3,7 @@
        <div class="form-group">
          <div class="input-group">
            <div class="input-group-addon"><i class="fa fa-search"></i></div>
-           <input type="text" class="form-control" placeholder="Search Name/City" ng-model="searchFish">
+           <input type="text" class="form-control" placeholder="Search Name/City" ng-model="filterText">
          </div>      
        </div>
      </form>
@@ -65,14 +65,14 @@
        </thead>
        
        <tbody>
-         <tr ng-repeat="roll in sushi | orderBy:sortType:sortReverse | filter:searchFish">
-           <td>{{ roll.name }}</td>
-           <td>{{ roll.fish }}</td>
-           <td>{{ roll.tastiness }}</td>
-           <td>{{ roll.name }}</td>
-           <td>{{ roll.fish }}</td>
-           <td>{{ roll.tastiness }}</td>
-           <td>{{ roll.tastiness }}</td>
+         <tr ng-repeat="data in empData | orderBy:sortType:sortReverse | myTableFilter:filterText">
+           <td>{{ data.id }}</td>
+           <td>{{ data.name }}</td>
+           <td>{{ data.phone }}</td>
+           <td>{{ data.address.city }}</td>
+           <td>{{ data.address.address_line1 }}</td>
+           <td>{{ data.address.address_line2 }}</td>
+           <td>{{ data.address.postal_code }}</td>
          </tr>
        </tbody>
      </table>
