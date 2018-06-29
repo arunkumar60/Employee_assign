@@ -1,0 +1,24 @@
+.uppercase{
+	text-transform: uppercase;
+}
+.font-bold{
+	font-weight: bold;
+}
+.first-char-upper {
+    text-transform: capitalize;
+}
+.pointer{
+	cursor: pointer;
+}
+.left-align{
+	float:  left;
+}
+.right-align{
+	float: right;
+}
+.display-none{
+	display: none;
+}
+.text-center{
+	text-align: center;
+}

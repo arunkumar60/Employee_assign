@@ -1,0 +1,170 @@
+<style>
+  .modal-body {
+    overflow-x: auto;
+  }
+</style>
+
+
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+    <h3 id="myModalLabel">Delete</h3>
+  </div>
+  <div class="modal-body">
+    <p></p>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button data-dismiss="modal" class="btn red" id="btnYes">Confirm</button>
+  </div>
+</div>
+<table class="table table-bordered table-users">
+  <thead>
+    <tr class="">
+      <th>Stock Id</th>
+      <th>Stock Name</th>
+      <th>Stock Price</th>
+      <th>Available Quantity</th>
+      <th>Action</th>
+      <th>Quote</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <tr ng-repeat="item in itemDetails">
+      <td>{{item.stockId}}</td>
+      <td>{{item.stockName}}</td>
+      <td>{{item.price}}</td>
+      <td>{{item.units}}</td>
+      <td>
+        <a class="btn mini blue-stripe btn-primary" ng-click="buyStock(item)">Buy</a>
+      </td>
+      <td>
+        <a class="btn mini blue-stripe btn-primary" ng-click="GetQuote(item)">Get Quote</a>
+      </td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+<div id="getQuoteModal" class="modal fade" role="dialog" aria-labelledby="quoteInfo" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×
+        </button>
+        <h4 class="modal-title" id="classModalLabel">
+          Quote
+        </h4>
+      </div>
+      <div class="modal-body">
+        <table id="classTable" class="table table-bordered">
+          <thead>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Id</td>
+              <td>
+                {{item.stockId}}
+              </td>
+            </tr>
+            <tr>
+              <td>Name</td>
+              <td>
+                {{item.stockName}}
+              </td>
+            </tr>
+            <tr>
+              <td>Current Price</td>
+              <td>
+                {{item.price}}
+              </td>
+            </tr>
+            <tr>
+              <td>Yesterday Price</td>
+              <td>
+                {{item.price-2}}
+              </td>
+            </tr>
+            <tr>
+              <td>7 Days Price</td>
+              <td>
+                {{item.price-10}}
+              </td>
+            </tr>
+            <tr>
+              <td>14 Days Price</td>
+              <td>
+                {{item.price - 7}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="buyStockModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="stockInfo" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+          ×
+        </button>
+        <h4 class="modal-title" id="classModalLabel">
+          Buy Stock
+        </h4>
+      </div>
+      <div class="modal-body">
+        <table id="classTable" class="table">
+          <thead>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Name</td>
+              <td>
+                {{currentItem.stockName}}
+              </td>
+            </tr>
+            <tr>
+              <td>Available Quantity</td>
+              <td>
+                {{currentItem.units}}
+              </td>
+            </tr>
+            <tr>
+              <td>Purchase Quantity</td>
+              <td>
+                <input id="purchasequantity" min="0" max={{currentItem.units}} type="number" ng-model="currentItem.quantity" placeholder="Enter Quantity" />
+              </td>
+            </tr>
+            <tr>
+              <td>Price</td>
+              <td>
+                {{currentItem.price}}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="text-align: center" id="Message" ng-if="message">{{message}}</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-primary" ng-click="purchaseOrder(currentItem)" ng-hide="message">
+          Purchase
+        </button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

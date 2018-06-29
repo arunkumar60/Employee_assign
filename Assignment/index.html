@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="stockingApp" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/mdbootstrap.css" rel="stylesheet" />
+    <link href="app/css/common.css" rel="stylesheet" />
+    <link href="app/css/home.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark header-color fixed-top">
+        <a class="navbar-brand">Title</a>
+    </nav>
+    </header>
+    <div ng-view></div>
+
+
+    <!--Footer-->
+    <footer class="page-footer font-small footer-color pt-0 footer-bottom">
+        <div class="container">
+            <div class="row">
+                
+            </div>
+        </div>
+        <div class="footer-copyright py-3 text-center black-text">
+            © 2018 Copyright: Prashant Jha
+        </div>
+    </footer>
+    <!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/jquery.min.js"></script>
+
+    <!-- UI Libs -->
+    <script src="Scripts/bootstrap.js"></script>
+
+
+    <!-- App libs -->
+    <script src="app/app.js"></script>
+    <script src="app/services/stockServiceFixture.js"></script>
+    <script src="app/services/stockservice.js"></script>
+
+    <!--Controllers -->
+    <script src="app/controllers/homeController.js"></script>
+    <script src="app/controllers/stockController.js"></script>
+    <!--Directives -->
+
+</body>
+
+</html>
