@@ -57,6 +57,9 @@ app.filter('myTableFilter', function(){
       }
       // If no search term exists, return the array unfiltered.
       else if (!searchTerm) {
+        var originalData = dataArray;
+        var manipulatedData = [];
+        
           return dataArray;
       }
       // Otherwise, continue.

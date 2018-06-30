@@ -24,10 +24,10 @@ app.config(function ($routeProvider) {
                 controller: 'homeController',
                 templateUrl: '/app/partials/homePage.html'
             }) 
-          .when('/viewOrder',
+          .when('/add',
               {
-                  controller: 'homeController',
-                  templateUrl: '/app/partials/homePage.html'
+                  controller: 'addEmployeeController',
+                  templateUrl: '/app/partials/addEmployeePage.html'
               }) 
         .when('/',
             {
