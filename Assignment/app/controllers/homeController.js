@@ -59,6 +59,12 @@ app.filter('myTableFilter', function(){
       else if (!searchTerm) {
         var originalData = dataArray;
         var manipulatedData = [];
+        originalData.forEach(function (arrayItem) {
+          if(isNaN(parseInt(arrayItem.phone))){
+            arrayItem.phone = "NA";
+          }
+          manipulatedData.push(originalData);
+        });
         
           return dataArray;
       }
