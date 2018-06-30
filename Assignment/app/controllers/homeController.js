@@ -7,11 +7,10 @@ app.controller('homeController', function ($scope,userNamesList,countryList,$roo
 
     function init() {
        
-       $scope.sortType     = 'name'; // set the default sort type
+       $scope.sortType     = 'id'; // set the default sort type
        $scope.sortReverse  = false;  // set the default sort order
-       $scope.searchFish   = '';     // set the default search/filter term
+       $scope.myTableFilter   = '';     // set the default search/filter term
        
-       // create the list of sushi rolls 
        $scope.empData = [{
             "id": 1,
             "name": "Jhon",

@@ -5,7 +5,7 @@
      <form>
        <div class="form-group">
          <div class="input-group">
-           <div class="input-group-addon"><i class="fa fa-search"></i></div>
+           <div class="input-group-addon"></div>
            <input type="text" class="form-control" placeholder="Search Name/City" ng-model="filterText">
          </div>      
        </div>
@@ -16,52 +16,52 @@
        <thead>
          <tr>
            <td>
-             <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+             <a ng-click="sortType = 'id'; sortReverse = !sortReverse" class="pointer">
                Id 
-               <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
-               <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
+               <span ng-show="sortType == 'id' && !sortReverse" class="fa fa-caret-down"></span>
+               <span ng-show="sortType == 'id' && sortReverse" class="fa fa-caret-up"></span>
              </a>
            </td>
            <td>
-             <a href="#" ng-click="sortType = 'fish'; sortReverse = !sortReverse">
+             <a ng-click="sortType = 'name'; sortReverse = !sortReverse" class="pointer">
              Name
-               <span ng-show="sortType == 'fish' && !sortReverse" class="fa fa-caret-down"></span>
-               <span ng-show="sortType == 'fish' && sortReverse" class="fa fa-caret-up"></span>
-             </a>
-           </td>
-           <td>
-             <a href="#" ng-click="sortType = 'tastiness'; sortReverse = !sortReverse">
-             Phone 
-               <span ng-show="sortType == 'tastiness' && !sortReverse" class="fa fa-caret-down"></span>
-               <span ng-show="sortType == 'tastiness' && sortReverse" class="fa fa-caret-up"></span>
-             </a>
-           </td>
-           <td>
-             <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
-               City 
                <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-down"></span>
                <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-up"></span>
              </a>
            </td>
            <td>
-             <a href="#" ng-click="sortType = 'fish'; sortReverse = !sortReverse">
+             <a ng-click="sortType = 'phone'; sortReverse = !sortReverse" class="pointer">
+             Phone 
+               <span ng-show="sortType == 'phone' && !sortReverse" class="fa fa-caret-down"></span>
+               <span ng-show="sortType == 'phone' && sortReverse" class="fa fa-caret-up"></span>
+             </a>
+           </td>
+           <td>
+             <a ng-click="sortType = 'city'; sortReverse = !sortReverse" class="pointer">
+               City 
+               <span ng-show="sortType == 'city' && !sortReverse" class="fa fa-caret-down"></span>
+               <span ng-show="sortType == 'city' && sortReverse" class="fa fa-caret-up"></span>
+             </a>
+           </td>
+           <td>
+             <a ng-click="sortType = 'address_line1'; sortReverse = !sortReverse" class="pointer">
              Address 1
-               <span ng-show="sortType == 'fish' && !sortReverse" class="fa fa-caret-down"></span>
-               <span ng-show="sortType == 'fish' && sortReverse" class="fa fa-caret-up"></span>
+               <span ng-show="sortType == 'address_line1' && !sortReverse" class="fa fa-caret-down"></span>
+               <span ng-show="sortType == 'address_line1' && sortReverse" class="fa fa-caret-up"></span>
              </a>
            </td>
            <td>
-             <a href="#" ng-click="sortType = 'tastiness'; sortReverse = !sortReverse">
+             <a ng-click="sortType = 'address_line2'; sortReverse = !sortReverse" class="pointer">
              Address 2 
-               <span ng-show="sortType == 'tastiness' && !sortReverse" class="fa fa-caret-down"></span>
-               <span ng-show="sortType == 'tastiness' && sortReverse" class="fa fa-caret-up"></span>
+               <span ng-show="sortType == 'address_line2' && !sortReverse" class="fa fa-caret-down"></span>
+               <span ng-show="sortType == 'address_line2' && sortReverse" class="fa fa-caret-up"></span>
              </a>
            </td>
            <td>
-             <a href="#" ng-click="sortType = 'tastiness'; sortReverse = !sortReverse">
+             <a ng-click="sortType = 'postal_code'; sortReverse = !sortReverse" class="pointer">
              Postal Code 
-               <span ng-show="sortType == 'tastiness' && !sortReverse" class="fa fa-caret-down"></span>
-               <span ng-show="sortType == 'tastiness' && sortReverse" class="fa fa-caret-up"></span>
+               <span ng-show="sortType == 'postal_code' && !sortReverse" class="fa fa-caret-down"></span>
+               <span ng-show="sortType == 'postal_code' && sortReverse" class="fa fa-caret-up"></span>
              </a>
            </td>
          </tr>
