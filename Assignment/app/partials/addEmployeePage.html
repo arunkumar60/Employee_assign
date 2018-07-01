@@ -1,21 +1,21 @@
 <div ng-controller="addEmployeeController"> 
-	<div class="add-form-container">
-		<form action="/action_page.php" class="padding-top">
-		<label for="name">Name</label>
-		<input type="text" id="name" name="name" placeholder="name..">
-		<label for="id">ID</label>
-		<input type="text" id="id" name="id" placeholder="id">
-		<label for="phone">Phone</label>
-		<input type="text" id="phone" name="phone" placeholder="phone..">
-		<label for="city">City</label>
-		<input type="text" id="city" name="city" placeholder="city..">
-		<label for="Address1">Address1</label>
-		<input type="text" id="Address1" name="Address1" placeholder="Address1..">
-		<label for="Address2">Address2</label>
-		<input type="text" id="Address2" name="Address2" placeholder="Address2..">
-		<label for="postal">Postal Code</label>
-		<input type="text" id="postal" name="postal" placeholder="postal code..">
-		<input type="submit" value="Save">
-		</form>
+	<div class="container form-padding">
+		
+		<input class="form-control" type="text" placeholder="Name" name="nameInput" ng-model="nameInput" required ng-class="nameInput ? '' : 'check'">
+
+		<input class="form-control" type="text" placeholder="Id" ng-model="idInput">
+		
+		<input class="form-control" type="number" placeholder="Phone" name="phoneInput" ng-model="phoneInput" required ng-class="phoneInput ? '' : 'check'">
+		
+		<input class="form-control" type="text" placeholder="City" ng-model="cityInput">
+	
+		<input class="form-control" type="text" placeholder="Address1" ng-model="address1Input">
+	
+		<input class="form-control" type="text" placeholder="Address2" ng-model="address2Input">
+		
+		<input class="form-control" type="text" placeholder="Postal Code" ng-model="pstCodeInput">
+
+		<a href="#/home"><input type="submit" value="Save" ng-click="submit()" ></a>
+		
 	</div> 
 </div>

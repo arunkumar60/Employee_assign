@@ -1,5 +1,5 @@
 ﻿
-app.controller('homeController', function ($scope,userNamesList,countryList,$rootScope) {
+app.controller('homeController', function ($scope,$rootScope) {
 
     //I like to have an init() for controllers that need to perform some initialization. 
     // Keeps things in one place
@@ -10,7 +10,11 @@ app.controller('homeController', function ($scope,userNamesList,countryList,$roo
        $scope.sortType     = 'id'; // set the default sort type
        $scope.sortReverse  = false;  // set the default sort order
        $scope.myTableFilter   = '';     // set the default search/filter term
-       
+       $scope.empData = [];
+       $rootScope.$on("employeeDetails", function(event,employeeDtls){
+         $rootScope.empDataAdded = employeeDtls;
+         console.log("employeeDtls",employeeDtls);
+       });
        $scope.empData = [{
             "id": 1,
             "name": "Jhon",
@@ -42,8 +46,11 @@ app.controller('homeController', function ($scope,userNamesList,countryList,$roo
                 "postal_code": "12455"
             }
         }];
-
-    };
+        if($rootScope.empDataAdded){
+          $scope.empData.push($rootScope.empDataAdded);
+        }
+      };
+      
 });
 app.filter('myTableFilter', function(){
   // Just add arguments to your HTML separated by :
