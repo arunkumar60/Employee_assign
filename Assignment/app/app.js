@@ -1,7 +1,5 @@
 ﻿/*#######################################################################
   
-  Arun Kumar
-
   Normally like to break AngularJS apps into the following folder structure
   at a minimum:
 
@@ -14,7 +12,7 @@
 
   #######################################################################*/
 
-var app = angular.module('stockingApp', ['ngRoute']);
+var app = angular.module('employeeApp', ['ngRoute']);
 
 //This configures the routes and associates each route with a view and a controller
 app.config(function ($routeProvider) {

@@ -46,7 +46,7 @@ app.controller('homeController', function ($scope,$rootScope) {
                 "postal_code": "12455"
             }
         }];
-        if($rootScope.empDataAdded){
+        if($rootScope.empDataAdded && $rootScope.empDataAdded.name && $rootScope.empDataAdded.phone){
           $scope.empData.push($rootScope.empDataAdded);
         }
       };
