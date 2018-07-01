@@ -1,7 +1,7 @@
 <div ng-controller="addEmployeeController"> 
 	<div class="container form-padding">
 		
-		<input class="form-control" type="text" placeholder="Name" name="nameInput" ng-model="nameInput" required ng-class="nameInput ? '' : 'check'">
+		<input class="form-control" type="text" placeholder="Name" name="nameInput" ng-model="nameInput" required ng-class="nameInput ? '' : 'check'" ng-minlength="4">
 
 		<input class="form-control" type="text" placeholder="Id" ng-model="idInput">
 		
